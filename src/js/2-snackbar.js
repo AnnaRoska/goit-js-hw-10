@@ -7,8 +7,8 @@ const form = document.querySelector(".form");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
     event.preventDefault();
-    const radioBtn = document.querySelector('[name="state"]:checked')?.value; // выбранная радио
-    const delay = document.querySelector('[name="delay"]').value; // текущее значен
+    const radioBtn = document.querySelector('[name="state"]:checked')?.value;
+    const delay = document.querySelector('[name="delay"]').value; 
         const promise = new Promise((res, rej) => {
             setTimeout(() => {
                 if (radioBtn === "fulfilled") {

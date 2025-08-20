@@ -22,7 +22,6 @@ const options = {
   onClose(selectedDates) {
       diffTime = selectedDates[0].getTime() - Date.now()
       if (diffTime <= 0) {
-          // Минула дата
           iziToast.show({
               color: 'red',
               position: 'center',
@@ -32,7 +31,6 @@ const options = {
           btnStart.setAttribute("disabled", "true");
           console.log("Минула дата", diffTime);
       } else {
-          // Майбутня дата
           btnStart.removeAttribute("disabled");
           userSelectedDate = selectedDates[0];
           console.log("Майбутня дата", diffTime);
@@ -51,9 +49,7 @@ btnStart.addEventListener('click', () => {
         if (diffTime <= 1000) {
             clearInterval(intervalId);
             inpDateStart.removeAttribute("disabled");
-        }
-        //  const varStr = convertMs(diffTime).days.toString;
-        //  timerDays.textContent = varStr.padStart(2, "0");  
+        } 
         timerDays.textContent = String(convertMs(diffTime).days).padStart(2, "0");
         timerHours.textContent = String(convertMs(diffTime).hours).padStart(2, "0");
         timerMinutes.textContent = String(convertMs(diffTime).minutes).padStart(2, "0");
@@ -65,7 +61,6 @@ btnStart.addEventListener('click', () => {
 
 
 function convertMs(ms) {
-  // Number of milliseconds per unit of time
   const second = 1000;
   const minute = second * 60;
   const hour = minute * 60;
@@ -82,7 +77,3 @@ function convertMs(ms) {
 
   return { days, hours, minutes, seconds };
 }
-
-// console.log(convertMs(2000).minutes); // {days: 0, hours: 0, minutes: 0, seconds: 2}
-// console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
-// console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
