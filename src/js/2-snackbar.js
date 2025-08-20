@@ -33,6 +33,7 @@ form.addEventListener("submit", (event) => {
                     message: result
                 })
       });
+    form.reset();
   });
 
   
