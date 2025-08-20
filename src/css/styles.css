@@ -16,3 +16,39 @@
 @import url('./badges.css');
 @import url('./back-link.css');
 @import url('./footer.css');
+
+.btn-start {
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 75px;
+  height: 40px;
+  background: #cfcfcf;
+
+}
+
+.inp-date-start {
+  width: 272px;
+  height: 40px;
+  font-size: 16px;
+
+/*   margin-left: 156px; */
+}
+
+.timer {
+  display: flex;
+  margin: 32px auto;
+/*   margin-left: 156px; */
+  flex-direction: row;
+  justify-content: center;
+  gap: 24px;
+
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+.value{
+  font-size: 48px;
+  
+}
