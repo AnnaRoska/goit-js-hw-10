@@ -32,8 +32,10 @@ form.addEventListener("submit", (event) => {
                     position: 'center',
                     message: result
                 })
-      });
-    form.reset();
+      })
+    .finally(() => {
+      form.reset();
+    });
   });
 
   
