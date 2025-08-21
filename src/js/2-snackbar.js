@@ -12,25 +12,25 @@ form.addEventListener("submit", (event) => {
         const promise = new Promise((res, rej) => {
             setTimeout(() => {
                 if (radioBtn === "fulfilled") {
-                    res(`✅ Fulfilled promise in ${delay}ms`);
+                    res(delay);
                 } else {
-                    rej(`❌ Rejected promise in ${delay}ms`);  
+                    rej(delay);  
                 }
                 }, delay);
             });
     promise
-      .then((result) => {
+      .then((delay) => {
         iziToast.show({
             color: 'green',
             position: 'center',
-            message: result
+            message: `✅ Fulfilled promise in ${delay}ms`
     });
       })
-      .catch((result) => {
+      .catch((delay) => {
         iziToast.show({
                     color: 'red',
                     position: 'center',
-                    message: result
+                    message: `❌ Rejected promise in ${delay}ms`
                 })
       })
     .finally(() => {
